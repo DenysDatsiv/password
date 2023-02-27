@@ -21,7 +21,6 @@ export class PasswordStrengthComponent implements OnChanges {
 
   passwordStatus: string ;
 
-
   private static readonly EASY_VALIDATION = /^(?:[a-zA-Z]+|\d+|[\!\@\#\$\%\^\&\*\)\(+\=\`~';<>?:"{}.,_-]+)$/;
   private static readonly MEDIUM_VALIDATION = /^(([a-zA-Z]+[\!\@\#\$\%\^\&\*\)\(+\=\._-]+)|(^[\d\!\@\#\$\%\^\&\*\)\(+\=\`~';<>?:"{}.,_-]+)|([a-zA-Z0-9]+))$/;
   private static readonly STRONG_VALIDATION = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*#?&]).+$/g;
