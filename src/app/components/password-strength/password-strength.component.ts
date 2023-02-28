@@ -19,11 +19,11 @@ export class PasswordStrengthComponent implements OnChanges {
   secondStrengthBar: string;
   thirdStrengthBar: string;
 
-  passwordStatus: string ;
+  passwordStatus: string;
 
-  private static readonly EASY_VALIDATION = /^(?:[a-zA-Z]+|\d+|[\!\@\#\$\%\^\&\*\)\(+\=\`~';<>?:"{}.,_-]+)$/;
-  private static readonly MEDIUM_VALIDATION = /^(([a-zA-Z]+[\!\@\#\$\%\^\&\*\)\(+\=\._-]+)|(^[\d\!\@\#\$\%\^\&\*\)\(+\=\`~';<>?:"{}.,_-]+)|([a-zA-Z0-9]+))$/;
-  private static readonly STRONG_VALIDATION = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*#?&]).+$/g;
+  private static readonly EASY_VALIDATION = /^(?:[a-zA-Z]+|\d+|[\!\@\#\$\%\^\&\*\)\(+\=\`~';<>?:"{}.,_№-]+)$/;
+  private static readonly MEDIUM_VALIDATION = /^(([a-zA-Z]+[\!\@\#\$\%\^\&\*\)\(+\=\._-]+)|(^[\d\!\@\#\$\%\^\&\*\)\(+\=\`~';<№>?:"{}.,_-]+)|([a-zA-Z0-9]+))$/;
+  private static readonly STRONG_VALIDATION = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*№#?&]).+$/g;
 
   private static getPasswordStrength(password: string): PasswordStrength {
     if (!password) {
@@ -59,7 +59,6 @@ export class PasswordStrengthComponent implements OnChanges {
       this.setBarColors('green', 'green', 'green');
       this.passwordStatus = 'Strong';
     }
-
     this.passwordStrength.emit(passwordStrength === PasswordStrength.STRONG);
   }
 
@@ -68,5 +67,4 @@ export class PasswordStrengthComponent implements OnChanges {
     this.secondStrengthBar = secondBarColor;
     this.thirdStrengthBar = thirdBarColor;
   }
-
 }
